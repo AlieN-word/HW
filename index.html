@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body style="max-width: 1200px; text-align: center; margin: 0 auto">
+    <div class="btn-container">
+      <button class="modal-btn">Open Modal Window</button>
+    </div>
+    <div
+      class="modal-window"
+      style="
+        width: 500px;
+        text-align: center;
+        display: none;
+        background-color: blue;
+      "
+    >
+      <h3 style="color: white">This is modal window</h3>
+      <button>Hide</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $(".modal-btn").on("click", () => {
+        $(".modal-window").fadeIn(1000);
+      });
+      $(".modal-window")
+        .children("button")
+        .on("click", () => {
+          $(".modal-window").fadeOut(1000);
+        });
+    </script>
+  </body>
+</html>
